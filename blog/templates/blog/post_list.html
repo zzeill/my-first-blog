@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>
+            Blog Genérico!
+        </title>
+        <style>
+            /* Hardcodeado hasta agregar estilos */
+            body {
+                background: #4a755d;
+            }
+
+            #container {
+                max-width:1100px;
+                margin: 0 auto 0 auto;
+            }
+
+            #topMenu ul {
+                list-style: none;
+                margin:0;
+                padding:0;
+            }
+
+            #topMenu li {
+                float:left;
+                background:rgb(226, 226, 226);
+                margin-right:1px;
+                text-align:center;
+            }
+
+            #topMenu li:hover {
+                background:gold;
+                
+            }
+
+            #topMenu a {
+                text-decoration:none;
+                color:inherit;
+                padding:10px;
+                min-width:70px;
+                display:block;
+            }
+
+            .floatFix {
+                clear:both;
+                padding-bottom:10px;
+            }
+
+            #content {
+                padding:10px;
+                background:#80ced6;
+            }
+
+            .post {
+                background:#d5f4e6;
+                padding:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="topMenu">
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/admin">Admin</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="floatFix"></div>
+            <div id="content">
+                <div class="post">
+                    <h1>
+                        Bienvenido a este Blog creado únicamente para practicar Python!
+                    </h1>
+                    <p>
+                        Próximamente estaremos agregando las funciones de post dinámicos, pero de mientras, un post hardcodeado!
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
