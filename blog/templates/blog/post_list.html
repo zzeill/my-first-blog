@@ -1,121 +1,16 @@
-<html>
-    <head>
-        <title>
-            Blog Genérico!
-        </title>
-        <style>
-            /* Hardcodeado hasta agregar estilos */
-            body {
-                background: #4a755d;
-            }
-
-            #container {
-                max-width:1100px;
-                margin: 0 auto 0 auto;
-            }
-
-            #topMenu ul {
-                list-style: none;
-                margin:0;
-                padding:0;
-            }
-
-            #topMenu li {
-                float:left;
-                background:rgb(226, 226, 226);
-                margin-right:1px;
-                text-align:center;
-            }
-
-            #topMenu li:hover {
-                background:gold;
-                
-            }
-
-            #topMenu a {
-                text-decoration:none;
-                color:inherit;
-                padding:10px;
-                min-width:70px;
-                display:block;
-            }
-
-            .floatFix {
-                clear:both;
-                padding-bottom:10px;
-            }
-
-            #content {
-                padding:10px;
-                background:#80ced6;
-            }
-
-            .post {
-                background:#d5f4e6;
-                padding:10px;
-                margin-bottom:10px;
-            }
-
-            .author {
-                text-align:right;
-                font-size:0.9em;
-                background:#c6ecdb;
-                padding:5px 10px;;
-                border:1px dotted #9ad4ba;
-                margin-top:2px
-            }
-
-            .title {
-                margin:0;
-                padding:0 0 10px 0;
-                color:rgb(255, 81, 0);
-                font-size:1.35em;
-                
-            }
-            
-            .text {
-                background:rgb(178, 243, 181);
-                padding:10px 15px 10px 15px;
-                font-size:1.1em;
-                border:1px dotted #9ad4ba;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="container">
-            <div id="topMenu">
-                <ul>
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/admin">Admin</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="floatFix"></div>
-            <div id="content">
-                <div class="post">
-                    <h2>
-                        Bienvenido a este Blog creado únicamente para practicar Python!
-                    </h1>
-                    <p>
-                        Ya muestra posts dinámicamente!!
-                    </p>
-                </div>
-
-                {% for post in posts %}
-                <div class="post">
-                    <h2 class="title">{{post.title}} >></h1>
-                    <div class="text">
-                        {{post.text}}
+{% extends 'blog/base.html' %}
+{% block content %}
+                <div class="row">
+                    <div class="col-md-12">
+                        {% for post in posts %}
+                        <div class="post">
+                            <h2 class="title"><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a> >></h2>
+                            <div class="text">
+                                {{post.text}}
+                            </div>
+                            <div class="author">Publicado por <b>{{post.author}}</b> el <span class="date">{{post.published_date}}</span></div>
+                        </div>
+                        {% endfor %}
                     </div>
-                    <div class="author">Publicado por <b>{{post.author}}</b> el <span class="date">{{post.published_date}}</span></div>
                 </div>
-                {% endfor %}
-                
-            </div>
-        </div>
-        
-    </body>
-</html>
+{% endblock %}

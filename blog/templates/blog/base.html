@@ -1,0 +1,45 @@
+{% load static %}
+<html>
+    <head>
+        <title>
+            Blog Genérico!
+        </title>
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet"> 
+
+    </head>
+    <body>
+        <div id="container">
+            <div id="topMenu">
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/admin">Admin</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="floatFix"></div>
+            <div id="content">
+                <div class="post page-header">
+                    <h2>
+                        ¡Bienvenido a este Blog Genérico!
+                    </h2>
+                    <p>
+                        ¡Desarrollado en Django/Python y ahora con extra Bootstrap!
+                    </p>
+                </div>
+
+                {% block content %}
+                {% endblock %}
+                
+            </div>
+        </div>
+        
+    </body>
+</html>
