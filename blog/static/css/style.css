@@ -20,8 +20,13 @@ body {
 #topMenu li {
     float:left;
     background:rgb(226, 226, 226);
-    margin-right:1px;
     text-align:center;
+    min-height:40px;
+}
+
+#topMenu li .glyphicon {
+padding-top:2px;
+min-height:20px;
 }
 
 #topMenu li:hover {
@@ -98,4 +103,25 @@ body {
 color:rgb(238, 29, 29);
 font-family: 'Parisienne', cursive;
 font-size:3em;
+}
+
+.nform label {
+    display:block;
+    columns: #333333;;
+}
+
+.nform input, .nform textarea {
+    width:100%;
+}
+
+.nform textarea {
+    padding:5px;
+}
+
+.fform {
+    text-align:center;
+}
+
+.editar {
+    float:right;
 }
