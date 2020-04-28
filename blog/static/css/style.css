@@ -124,4 +124,22 @@ font-size:3em;
 
 .editar {
     float:right;
+    margin-right:2px;
+}
+
+.borrar {
+    float:right;
+}
+
+.login td {
+padding:3px;
+}
+
+#topMenu .right {
+    float:right;
+    text-transform: capitalize;
+}
+
+.capitalize {
+    text-transform: capitalize;
 }

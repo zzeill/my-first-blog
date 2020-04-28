@@ -4,6 +4,7 @@
     <div class="col-md-12">
         <div class="post">
             {% if user.is_authenticated %}
+            <a class="btn btn-default borrar" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
             <a class="btn btn-default editar" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
             {% endif %}
             <h2 class="title"><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a> >></h2>
@@ -12,8 +13,11 @@
                 {{post.text}}
             </div>
             <div class="author">
-                Publicado por <b>{{post.author}}</b> 
-                {% if post.published_date %} el <span class="date">{{post.published_date}}</span>{% endif %}
+                {% if post.published_date %}
+                Publicado por <b class="capitalize">{{post.author}}</b> el <span class="date">{{post.published_date}}</span>
+                {% else %}
+                <b>Borrador</b> creado por <b class="capitalize">{{post.author}}</b> el <span class="date">{{post.created_date}}</span> <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publicar</a>
+                {% endif %}
             </div>
         </div>
     </div>

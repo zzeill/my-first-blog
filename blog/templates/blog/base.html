@@ -26,6 +26,19 @@
                     <li>
                         <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
                     </li>
+                    <li>
+                        <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+                    </li>
+                    <li class="right">
+                        <a href="{% url 'logout' %}">Salir</a>
+                    </li>
+                    <li class="right">
+                        <a>{{ user.username }}</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
+                    </li>
                     {% endif %}
                 </ul>
             </div>
