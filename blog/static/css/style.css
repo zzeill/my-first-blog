@@ -143,3 +143,22 @@ padding:3px;
 .capitalize {
     text-transform: capitalize;
 }
+
+.comment {
+    background:lightblue;
+    padding:10px;
+    border: 1px dotted gray;
+    margin-bottom:20px;
+}
+
+.comment .author {
+    background:lightsteelblue;
+}
+
+.hcomment {
+    float:right;
+}
+
+.addcomment {
+    margin-bottom:20px;
+}

@@ -8,7 +8,13 @@
                             <div class="text">
                                 {{post.text|truncatechars:200}}
                             </div>
-                            <div class="author">Publicado por <b class="capitalize">{{post.author}}</b> el <span class="date">{{post.published_date}}</span></div>
+                            <div class="author">Publicado por <b class="capitalize">{{post.author}}</b> el <span class="date">{{post.published_date}}</span>
+                                {% if user.is_authenticated %}
+                                - <a href="{% url 'post_detail' pk=post.pk %}#comment1" >Comentarios: {{ post.comments.count }}</a>
+                                {% else %}
+                                - <a href="{% url 'post_detail' pk=post.pk %}#comment1">Comentarios: {{ post.approved_comments.count }}</a>
+                                {% endif %}
+                            </div>
                         </div>
                         {% endfor %}
                     </div>
