@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %} {% block content %}
+{% load crispy_forms_tags %}
+<form method="post" class="form-group">
+{% csrf_token %}
+    <div class="row">
+        <div class="col-md-8">
+            <div class="post login">
+                <div class="text nform">
+                    <h2 class="title">Registrar >></h2>
+                    <div class="crispy">
+                        {{ form|crispy }}
+                    </div>
+                    <input type="submit" value="Registrarse" />
+                </div>
+                <div class="floatFix"></div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

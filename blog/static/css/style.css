@@ -162,3 +162,9 @@ padding:3px;
 .addcomment {
     margin-bottom:20px;
 }
+
+.registerNotice {
+    margin-top:20px;
+    background:rgb(160, 255, 176);
+    padding:12px 5px 5px 5px;
+}

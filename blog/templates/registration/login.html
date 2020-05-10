@@ -18,6 +18,9 @@
         </table>
         <input type="submit" value="Login" />
         <input type="hidden" name="next" value="{{ next }}" />
+        <div class="registerNotice">
+            <p>¿No tienes una cuenta? Crea una <a href="{% url 'register' %}">aquí!</a></p>
+        </div>
     </div>
 </form>
 {% endblock %}
